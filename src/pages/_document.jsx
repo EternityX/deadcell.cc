@@ -37,7 +37,10 @@ const modeScript = `
 
 export default function Document() {
   return (
-    <Html className="absolute w-auto min-w-full min-h-full max-w-none" lang="en">
+    <Html
+      className="absolute min-h-full w-auto min-w-full max-w-none"
+      lang="en"
+    >
       <Head>
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
         <link

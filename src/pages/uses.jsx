@@ -35,24 +35,27 @@ export default function Uses() {
           content="Software I use day-to-day, and other things I recommend."
         />
       </Head>
-      <SimpleLayout
-        title="Software I use day-to-day, and other things I recommend."
-      >
+      <SimpleLayout title="Software I use day-to-day, and other things I recommend.">
         <div className="space-y-20">
           <ToolsSection title="Development tools">
             <Tool title="Visual Studio Code">
-              Currently the best code editor on the market, you’re missing out if you don’t use VS code. This site was written using VS Code.
+              Currently the best code editor on the market, you’re missing out
+              if you don’t use VS code. This site was written using VS Code.
             </Tool>
             <Tool title="Visual Studio 2022">
-              All my driver development is done in Visual Studio. I don’t think you would want to do driver development outside of Visual Studio personally.
+              All my driver development is done in Visual Studio. I don’t think
+              you would want to do driver development outside of Visual Studio
+              personally.
             </Tool>
             <Tool title="CLion">
-              If I’m writing regular software, I like CLion for the well-integrated support of multiple toolchains such as LLVM.
+              If I’m writing regular software, I like CLion for the
+              well-integrated support of multiple toolchains such as LLVM.
             </Tool>
           </ToolsSection>
           <ToolsSection title="Productivity">
             <Tool title="Sublime Merge">
-              Simple and easy to use graphical interface for Git when you don’t want to mess with the command line.
+              Simple and easy to use graphical interface for Git when you don’t
+              want to mess with the command line.
             </Tool>
           </ToolsSection>
         </div>
