@@ -57,8 +57,8 @@ export default function Home() {
       <div className="relative flex h-screen items-center justify-center">
         {muted && (
           <>
-            <div className="absolute inset-0 bg-black/30" />
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div className="pointer-events-none absolute inset-0 bg-black/30" />
+            <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
               <span className="font-mono font-medium text-white">
                 [click to unmute]
               </span>
@@ -66,7 +66,11 @@ export default function Home() {
           </>
         )}
 
-        <a href="https://github.com/EternityX" className="h-full w-full">
+        <a
+          href="https://github.com/EternityX"
+          onClick={(e) => muted && e.preventDefault()}
+          className="h-full w-full"
+        >
           <video
             ref={videoRef}
             id="video"
