@@ -4,10 +4,7 @@ import Link from 'next/link'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import {
-  GitHubIcon,
-  TwitterIcon,
-} from '@/components/SocialIcons'
+import { GitHubIcon, TwitterIcon } from '@/components/SocialIcons'
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
     <li className={clsx(className, 'flex')}>
@@ -43,7 +40,6 @@ export default function About() {
           content="Hi, I’m Jeramie. 26 years old. I've been a software developer for 8 years now."
         />
       </Head>
-      
     </>
   )
 }
