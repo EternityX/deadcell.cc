@@ -57,14 +57,19 @@ export default function Home() {
       <div className="relative flex h-screen items-center justify-center">
         {muted && (
           <>
-            <div className="pointer-events-none absolute inset-0 bg-black/30" />
-            <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div className="pointer-events-none absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2">
               <span className="font-mono font-medium text-white">
-                [click to unmute]
+                「click to unmute」
               </span>
             </div>
           </>
         )}
+
+        <div className="-translate-y-1/3[-12px] pointer-events-none absolute left-1/2 top-1/3 mt-4 -translate-x-1/2 rounded-sm bg-black/30 px-4 py-2.5 backdrop-blur">
+          <span className="font-mono font-medium text-white">
+            github.com/eternityx
+          </span>
+        </div>
 
         <a
           href="https://github.com/EternityX"
