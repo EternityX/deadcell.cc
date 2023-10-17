@@ -58,14 +58,14 @@ export default function Home() {
         {muted && (
           <>
             <div className="pointer-events-none absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2">
-              <span className="font-mono font-medium text-white">
+              <span className="font-mono font-medium text-indigo-500 [text-shadow:_1px_2px_6px_rgb(0_0_0_/_100%)]">
                 「click to unmute」
               </span>
             </div>
           </>
         )}
 
-        <div className="-translate-y-1/3[-12px] pointer-events-none absolute left-1/2 top-1/3 mt-4 -translate-x-1/2 rounded-sm bg-black/30 px-4 py-2.5 backdrop-blur">
+        <div className="-translate-y-1/3[-14px] pointer-events-none absolute left-1/2 top-1/3 mt-6 -translate-x-1/2 rounded-sm bg-gray-500/30 px-4 py-2.5 shadow-xl backdrop-blur">
           <span className="font-mono font-medium text-white">
             github.com/eternityx
           </span>
@@ -87,7 +87,7 @@ export default function Home() {
               muted && 'cursor-pointer',
             )}
           >
-            <source src="/video/video.mp4" type="video/mp4" />
+            <source src="/video/rebirth.mp4" type="video/mp4" />
           </video>
         </a>
       </div>
