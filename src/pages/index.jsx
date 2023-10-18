@@ -55,23 +55,25 @@ export default function Home() {
     const video = videoRef.current
 
     if (video) {
-      const duration = video.duration
-      setDuration(duration)
-    }
-  }, [])
+      const updateDuration = () => {
+        const video = videoRef.current
+    
+        if (video) {
+          const duration = video.duration
+          setDuration(duration)
+        }
+      }
 
-  useEffect(() => {
-    const video = videoRef.current
-
-    if (video) {
       const updateTime = () => {
         const currentTime = video.currentTime
         setCurrentTime(currentTime)
       }
 
-      videoRef.current.addEventListener('timeupdate', updateTime)
+      video.addEventListener('durationupdate', updateDuration)
+      video.addEventListener('timeupdate', updateTime)
 
       return () => {
+        video.removeEventListener('durationupdate', updateDuration)
         video.removeEventListener('timeupdate', updateTime)
       }
     }
@@ -98,15 +100,6 @@ export default function Home() {
     } catch (err) {}
   }
 
-  const handleTimeUpdate = () => {
-    if (videoRef.current) {
-      const currentTime = videoRef.current.currentTime
-      const currentTimeInRealTime = convertTimeToTimestamp(
-        currentTime.toFixed(0),
-      )
-    }
-  }
-
   const handleIconMouseEnter = (event, icon) => {
     setHoveredIcon(icon)
   }
@@ -122,12 +115,12 @@ export default function Home() {
         <meta name="description" content="" />
       </Head>
 
-      <div className="absolute z-50 h-2 w-full bg-black/25 shadow-xl backdrop-blur">
+      {/* <div className="absolute z-50 h-2 w-full bg-black/25 shadow-xl backdrop-blur">
         <div
           className="absolute h-2 bg-[#C07A89] shadow-xl"
-          style={{ width: `${(currentTime / 532) * 100}%` }}
+          style={{ width: `${(currentTime / duration) * 100}%` }}
         />
-      </div>
+      </div> */}
 
       <div className="relative flex h-screen items-center justify-center text-xl lg:text-base">
         {muted && (
@@ -256,7 +249,6 @@ export default function Home() {
             autoPlay={true}
             loop={true}
             onClick={() => unmute()}
-            onTimeUpdate={handleTimeUpdate()}
             className={clsx('h-full w-full object-cover')}
           >
             <source src="/video/desolate.mp4" type="video/mp4" />
