@@ -87,7 +87,7 @@ export default function Home() {
               muted && 'cursor-pointer',
             )}
           >
-            <source src="/video/rebirth.mp4" type="video/mp4" />
+            <source src="/video/desolate.mp4" type="video/mp4" />
           </video>
         </a>
       </div>
