@@ -30,8 +30,6 @@ export default function Home() {
     if (video) {
       video.volume = 0.4
 
-      setDuration(video.duration)
-
       // play() returns a promise which gets rejected if there is an autoplay policy
       // in place, which is enabled by default in pretty much every browser, one
       // exception is if the video is muted beforehand
@@ -50,6 +48,15 @@ export default function Home() {
           })
         })
       })
+    }
+  }, [])
+
+  useEffect(() => {
+    const video = videoRef.current
+
+    if (video) {
+      const duration = video.duration
+      setDuration(duration)
     }
   }, [])
 
