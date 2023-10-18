@@ -125,7 +125,7 @@ export default function Home() {
       <div className="absolute z-50 h-2 w-full bg-black/25 shadow-xl backdrop-blur">
         <div
           className="absolute h-2 bg-[#C07A89] shadow-xl"
-          style={{ width: `${(currentTime / duration) * 100}%` }}
+          style={{ width: `${(currentTime / 532) * 100}%` }}
         />
       </div>
 
