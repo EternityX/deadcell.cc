@@ -242,8 +242,7 @@ export default function Home() {
         <div className="pointer-events-none absolute left-1/2 top-0 mt-6 -translate-x-1/2 -translate-y-1/3">
           <span className="font-mono text-white [text-shadow:_1px_2px_6px_rgb(0_0_0_/_100%)]">
             {convertTimeToTimestamp(currentTime.toFixed(0)) +
-              ' / ' +
-              convertTimeToTimestamp(duration.toFixed(0))}
+              ' / 5:32'}
           </span>
         </div>
 
