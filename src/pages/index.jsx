@@ -104,8 +104,6 @@ export default function Home() {
       const currentTimeInRealTime = convertTimeToTimestamp(
         currentTime.toFixed(0),
       )
-
-      console.log('Current time in real time:', currentTimeInRealTime)
     }
   }
 
