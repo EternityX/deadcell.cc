@@ -50,8 +50,6 @@ export default function Home() {
           });
         });
       });
-
-      setDuration(video.duration);
     }
   }, []);
 
@@ -69,6 +67,10 @@ export default function Home() {
   }, [muted]);
 
   const convertSecondsToTimestamp = useCallback((seconds: number) => {
+    if (isNaN(seconds)) {
+      return;
+    }
+
     const duration = intervalToDuration({ start: 0, end: seconds * 1000 });
 
     const formatted = formatDuration(duration, {
@@ -238,8 +240,12 @@ export default function Home() {
             autoPlay={true}
             loop={true}
             onClick={() => unmute()}
-            // @ts-ignore
-            onTimeUpdate={(e) => setCurrentTime(e.target.currentTime)}
+            onTimeUpdate={(e) => {
+              // @ts-ignore
+              setDuration(e.target.duration);
+              // @ts-ignore
+              setCurrentTime(e.target.currentTime);
+            }}
             className={clsx('h-full w-full object-cover')}
           >
             <source src="/video/tinkle.mp4" type="video/mp4" />
