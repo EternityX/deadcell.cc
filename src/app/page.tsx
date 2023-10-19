@@ -33,7 +33,7 @@ export default function Home() {
     const video = videoRef.current;
 
     if (video) {
-      video.volume = 0.4;
+      video.volume = 0.33;
 
       // play() returns a promise which gets rejected if there is an autoplay policy
       // in place, which is enabled by default in pretty much every browser, one
