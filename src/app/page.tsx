@@ -1,23 +1,20 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
-
-import clsx from 'clsx';
 import Head from 'next/head';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faShirt } from '@fortawesome/free-solid-svg-icons';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import {
-  faGithub,
-  faTwitter,
-  faLinkedin,
   faArtstation,
   faBehance,
-  faSteam,
-  faYoutube,
   faDeviantart,
   faDiscord,
+  faGithub,
+  faLinkedin,
+  faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import clsx from 'clsx';
+import { formatDuration, intervalToDuration } from 'date-fns';
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -53,6 +50,8 @@ export default function Home() {
           });
         });
       });
+
+      setDuration(video.duration);
     }
   }, []);
 
@@ -69,39 +68,20 @@ export default function Home() {
     }
   }, [muted]);
 
-  // Update current video time
-  useEffect(() => {
-    const video = videoRef.current;
+  const convertSecondsToTimestamp = useCallback((seconds: number) => {
+    const duration = intervalToDuration({ start: 0, end: seconds * 1000 });
 
-    if (video) {
-      const updateTime = () => {
-        const currentTime = video.currentTime;
-        setCurrentTime(currentTime);
-      };
+    const formatted = formatDuration(duration, {
+      format: ['hours', 'minutes', 'seconds'],
+      zero: true,
+      delimiter: ':',
+      locale: {
+        formatDistance: (_token, count) => String(count).padStart(2, '0'),
+      },
+    });
 
-      video.addEventListener('timeupdate', updateTime);
-
-      return () => {
-        video.removeEventListener('timeupdate', updateTime);
-      };
-    }
+    return formatted;
   }, []);
-
-  // Set video duration
-  useEffect(() => {
-    const video = videoRef.current;
-
-    if (video) {
-      const duration = video.duration;
-      setDuration(duration);
-    }
-  }, []);
-
-  const convertTimeToTimestamp = (time: number) => {
-    const date = new Date(0);
-    date.setSeconds(time);
-    return date.toISOString().substr(15, 4); // Extracts the time part in HH:mm:ss format
-  };
 
   const handleIconMouseEnter = (event: any, icon: string) => {
     // @ts-ignore
@@ -117,49 +97,49 @@ export default function Home() {
     <>
       <Head>
         <title>DEADCELL</title>
-        <meta name='description' content='' />
+        <meta name="description" content="" />
       </Head>
 
-      <div className='absolute z-50 h-2 w-full bg-black/25 shadow-xl backdrop-blur'>
+      <div className="absolute z-50 h-2 w-full bg-black/25 shadow-xl backdrop-blur">
         <div
-          className='absolute h-2 bg-[#C07A89] shadow-xl'
+          className="absolute h-2 bg-[#C07A89] shadow-xl"
           style={{ width: `${(currentTime / duration) * 100}%` }}
         />
       </div>
 
-      <div className='relative flex h-screen items-center justify-center text-xl lg:text-base'>
+      <div className="relative flex h-screen items-center justify-center text-xl lg:text-base">
         {muted && (
           <>
-            <div className='pointer-events-none absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2'>
-              <span className='font-mono font-medium text-white [text-shadow:_1px_2px_6px_rgb(0_0_0_/_100%)]'>
+            <div className="pointer-events-none absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2">
+              <span className="font-mono font-medium text-white [text-shadow:_1px_2px_6px_rgb(0_0_0_/_100%)]">
                 「 click to unmute 」
               </span>
             </div>
           </>
         )}
 
-        <div className='-translate-y-1/3[-14px] absolute left-1/2 top-1/3 z-50 mt-4 -translate-x-1/2 rounded bg-slate-500/50 px-4 py-3.5 shadow-xl backdrop-blur'>
-          <div className='grid grid-cols-4 gap-4 text-white lg:text-lg'>
+        <div className="-translate-y-1/3[-14px] absolute left-1/2 top-1/3 z-50 mt-4 -translate-x-1/2 rounded bg-slate-500/50 px-4 py-3.5 shadow-xl backdrop-blur">
+          <div className="grid grid-cols-4 gap-4 text-white lg:text-lg">
             <div
-              className='transition-colors ease-in hover:text-[#C07A89]'
+              className="transition-colors ease-in hover:text-[#C07A89]"
               onMouseEnter={(event) => handleIconMouseEnter(event, 'GitHub')}
               onMouseLeave={handleIconMouseLeave}
             >
-              <a href='https://github.com/EternityX'>
+              <a href="https://github.com/EternityX">
                 <FontAwesomeIcon icon={faGithub} />
               </a>
             </div>
             <div
-              className='transition-colors ease-in hover:text-[#1DA1F2]'
+              className="transition-colors ease-in hover:text-[#1DA1F2]"
               onMouseEnter={(event) => handleIconMouseEnter(event, '@9Syl')}
               onMouseLeave={handleIconMouseLeave}
             >
-              <a href='https://twitter.com/9Syl'>
+              <a href="https://twitter.com/9Syl">
                 <FontAwesomeIcon icon={faTwitter} />
               </a>
             </div>
             <div
-              className='transition-colors ease-in hover:text-[#5865F2]'
+              className="transition-colors ease-in hover:text-[#5865F2]"
               style={{ cursor: 'pointer' }}
               onMouseEnter={(event) =>
                 handleIconMouseEnter(event, 'jeramiedavis')
@@ -175,49 +155,49 @@ export default function Home() {
               onMouseLeave={handleIconMouseLeave}
             >
               <a
-                className='transition-colors ease-in hover:text-[#C07A89]'
-                href='mailto:jeramie@pm.me'
+                className="transition-colors ease-in hover:text-[#C07A89]"
+                href="mailto:jeramie@pm.me"
               >
                 <FontAwesomeIcon icon={faEnvelope} />
               </a>
             </div>
             <div
-              className='transition-colors ease-in hover:text-[#00E59B]'
+              className="transition-colors ease-in hover:text-[#00E59B]"
               onMouseEnter={(event) =>
                 handleIconMouseEnter(event, 'DeviantArt')
               }
               onMouseLeave={handleIconMouseLeave}
             >
-              <a href='https://www.deviantart.com/mybrainisdamaged'>
+              <a href="https://www.deviantart.com/mybrainisdamaged">
                 <FontAwesomeIcon icon={faDeviantart} />
               </a>
             </div>
             <div
-              className='transition-colors ease-in hover:text-[#13AFF0]'
+              className="transition-colors ease-in hover:text-[#13AFF0]"
               onMouseEnter={(event) =>
                 handleIconMouseEnter(event, 'ArtStation')
               }
               onMouseLeave={handleIconMouseLeave}
             >
-              <a href='https://www.artstation.com/jeramiedavis'>
+              <a href="https://www.artstation.com/jeramiedavis">
                 <FontAwesomeIcon icon={faArtstation} />
               </a>
             </div>
             <div
-              className='transition-colors ease-in hover:text-[#0057FF]'
+              className="transition-colors ease-in hover:text-[#0057FF]"
               onMouseEnter={(event) => handleIconMouseEnter(event, 'Behance')}
               onMouseLeave={handleIconMouseLeave}
             >
-              <a href='https://www.behance.net/jeramie-davis'>
+              <a href="https://www.behance.net/jeramie-davis">
                 <FontAwesomeIcon icon={faBehance} />
               </a>
             </div>
             <div
-              className='transition-colors ease-in hover:text-[#0073B2]'
+              className="transition-colors ease-in hover:text-[#0073B2]"
               onMouseEnter={(event) => handleIconMouseEnter(event, 'LinkedIn')}
               onMouseLeave={handleIconMouseLeave}
             >
-              <a href='https://www.linkedin.com/in/jeramiedavis/'>
+              <a href="https://www.linkedin.com/in/jeramiedavis/">
                 <FontAwesomeIcon icon={faLinkedin} />
               </a>
             </div>
@@ -226,19 +206,19 @@ export default function Home() {
 
         {hoveredIcon && (
           <>
-            <div className='pointer-events-none absolute left-1/2 top-1/3 mt-36 -translate-x-1/2 -translate-y-1/2 rounded bg-slate-500/50 px-4 shadow-xl backdrop-blur'>
-              <span className='font-mono font-medium text-white [text-shadow:_1px_2px_6px_rgb(0_0_0_/_100%)]'>
+            <div className="pointer-events-none absolute left-1/2 top-1/3 mt-36 -translate-x-1/2 -translate-y-1/2 rounded bg-slate-500/50 px-4 shadow-xl backdrop-blur">
+              <span className="font-mono font-medium text-white [text-shadow:_1px_2px_6px_rgb(0_0_0_/_100%)]">
                 {hoveredIcon}
               </span>
             </div>
           </>
         )}
 
-        <div className='pointer-events-none absolute left-1/2 top-0 mt-6 -translate-x-1/2 -translate-y-1/3'>
-          <span className='font-mono text-white [text-shadow:_1px_2px_6px_rgb(0_0_0_/_100%)]'>
-            {convertTimeToTimestamp(parseInt(currentTime.toFixed(0))) +
+        <div className="pointer-events-none absolute left-1/2 top-0 mt-6 -translate-x-1/2 -translate-y-1/3">
+          <span className="font-mono text-white [text-shadow:_1px_2px_6px_rgb(0_0_0_/_100%)]">
+            {convertSecondsToTimestamp(currentTime) +
               ' / ' +
-              convertTimeToTimestamp(parseInt(duration.toFixed(0)))}
+              convertSecondsToTimestamp(duration)}
           </span>
         </div>
 
@@ -250,17 +230,19 @@ export default function Home() {
 
         <div
           onClick={(e) => muted && e.preventDefault()}
-          className='h-full w-full'
+          className="h-full w-full"
         >
           <video
             ref={videoRef}
-            id='video'
+            id="video"
             autoPlay={true}
             loop={true}
             onClick={() => unmute()}
+            // @ts-ignore
+            onTimeUpdate={(e) => setCurrentTime(e.target.currentTime)}
             className={clsx('h-full w-full object-cover')}
           >
-            <source src='/video/tinkle.mp4' type='video/mp4' />
+            <source src="/video/tinkle.mp4" type="video/mp4" />
           </video>
         </div>
       </div>
