@@ -1,43 +1,37 @@
 {
-  "name": "tailwindui-template",
+  "name": "deadcell.cc",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --check --ignore-path .gitignore ."
   },
-  "browserslist": "defaults, not ie <= 11",
   "dependencies": {
-    "@coreui/react": "^5.0.0-alpha.3",
-    "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@headlessui/react": "^1.7.17",
-    "@mapbox/rehype-prism": "^0.8.0",
-    "@mdx-js/loader": "^2.3.0",
-    "@mdx-js/react": "^2.3.0",
-    "@next/mdx": "^13.5.4",
     "@tailwindcss/typography": "^0.5.10",
-    "autoprefixer": "^10.4.16",
     "clsx": "^2.0.0",
-    "fast-glob": "^3.3.1",
-    "feed": "^4.2.2",
-    "focus-visible": "^5.2.0",
-    "next": "13.5.4",
+    "next": "13.5.6",
     "postcss-focus-visible": "^9.0.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-player": "^2.13.0",
-    "remark-gfm": "^4.0.0",
-    "tailwindcss": "^3.3.3"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "eslint": "8.51.0",
-    "eslint-config-next": "13.5.4",
+    "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
+    "@types/node": "^20.8.7",
+    "@types/react": "^18.2.29",
+    "@types/react-dom": "^18.2.14",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.51.0",
+    "eslint-config-next": "13.5.6",
+    "postcss": "^8.4.31",
     "prettier": "^3.0.3",
-    "prettier-plugin-tailwindcss": "^0.5.6"
+    "prettier-plugin-tailwindcss": "^0.5.6",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.2.2"
   }
 }
