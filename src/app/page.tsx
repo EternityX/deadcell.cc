@@ -94,6 +94,9 @@ export default function Home() {
     setHoveredIcon(null);
   };
 
+  const videos = ['tinkle.mp4', 'aiko.mp4', 'desolate.mp4', 'verge.mp4', 'limbo.mp4', 'laptop.mp4', 'god.mp4', 'smokey.mp4'];
+  const videoToPlay = videos[Math.floor(Math.random() * videos.length)];
+
   // @ts-ignore
   return (
     <>
@@ -248,7 +251,7 @@ export default function Home() {
             }}
             className={clsx('h-full w-full object-cover')}
           >
-            <source src="/video/tinkle.mp4" type="video/mp4" />
+            <source src={'/video/' + videoToPlay} type="video/mp4" />
           </video>
         </div>
       </div>
