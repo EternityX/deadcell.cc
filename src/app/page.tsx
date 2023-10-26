@@ -95,8 +95,8 @@ export default function Home() {
   };
 
   const getVideoToPlay = () => {
-    const videos = ['tinkle.mp4', 'aiko.mp4', 'desolate.mp4', 'verge.mp4', 'limbo.mp4', 'laptop.mp4', 'god.mp4', 'smokey.mp4'];
-    return videos[Math.floor(Math.random() * videos.length)];
+    const videos = ['tinkle.mp4', 'aiko.mp4', 'desolate.mp4', 'verge.mp4', 'limbo.mp4', 'laptop.mp4', 'god.mp4', 'smokey.mp4', 'the-black.mp4', 'og.mp4'];
+    return 'og.mp4';
   }
 
   // @ts-ignore
