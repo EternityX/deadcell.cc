@@ -8,8 +8,8 @@ import {
   faDeviantart,
   faDiscord,
   faGithub,
-  faLinkedin,
   faTwitter,
+  faSteam,
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -200,12 +200,12 @@ export default function Home() {
               </a>
             </div>
             <div
-              className="transition-colors ease-in hover:text-[#0073B2]"
-              onMouseEnter={(event) => handleIconMouseEnter(event, 'LinkedIn')}
+              className="transition-colors ease-in hover:text-[#C07A89]"
+              onMouseEnter={(event) => handleIconMouseEnter(event, 'Steam')}
               onMouseLeave={handleIconMouseLeave}
             >
-              <a href="https://www.linkedin.com/in/jeramiedavis/">
-                <FontAwesomeIcon icon={faLinkedin} />
+              <a href="https://steamcommunity.com/id/atoix/">
+                <FontAwesomeIcon icon={faSteam} />
               </a>
             </div>
           </div>
