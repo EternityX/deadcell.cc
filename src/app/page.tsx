@@ -132,7 +132,7 @@ export default function Home() {
               onMouseEnter={(event) => handleIconMouseEnter(event, 'GitHub')}
               onMouseLeave={handleIconMouseLeave}
             >
-              <a href="https://github.com/EternityX">
+              <a target="_blank" href="https://github.com/EternityX">
                 <FontAwesomeIcon icon={faGithub} />
               </a>
             </div>
@@ -141,7 +141,7 @@ export default function Home() {
               onMouseEnter={(event) => handleIconMouseEnter(event, '@9Syl')}
               onMouseLeave={handleIconMouseLeave}
             >
-              <a href="https://twitter.com/9Syl">
+              <a target="_blank" href="https://twitter.com/9Syl">
                 <FontAwesomeIcon icon={faTwitter} />
               </a>
             </div>
@@ -175,7 +175,7 @@ export default function Home() {
               }
               onMouseLeave={handleIconMouseLeave}
             >
-              <a href="https://www.deviantart.com/mybrainisdamaged">
+              <a target="_blank" href="https://www.deviantart.com/mybrainisdamaged">
                 <FontAwesomeIcon icon={faDeviantart} />
               </a>
             </div>
@@ -186,7 +186,7 @@ export default function Home() {
               }
               onMouseLeave={handleIconMouseLeave}
             >
-              <a href="https://www.artstation.com/jeramiedavis">
+              <a target="_blank" href="https://www.artstation.com/jeramiedavis">
                 <FontAwesomeIcon icon={faArtstation} />
               </a>
             </div>
@@ -195,7 +195,7 @@ export default function Home() {
               onMouseEnter={(event) => handleIconMouseEnter(event, 'Behance')}
               onMouseLeave={handleIconMouseLeave}
             >
-              <a href="https://www.behance.net/jeramie-davis">
+              <a target="_blank" href="https://www.behance.net/jeramie-davis">
                 <FontAwesomeIcon icon={faBehance} />
               </a>
             </div>
@@ -204,7 +204,7 @@ export default function Home() {
               onMouseEnter={(event) => handleIconMouseEnter(event, 'Steam')}
               onMouseLeave={handleIconMouseLeave}
             >
-              <a href="https://steamcommunity.com/id/atoix/">
+              <a target="_blank" href="https://steamcommunity.com/id/atoix/">
                 <FontAwesomeIcon icon={faSteam} />
               </a>
             </div>
