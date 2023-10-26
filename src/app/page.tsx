@@ -74,7 +74,7 @@ export default function Home() {
     const duration = intervalToDuration({ start: 0, end: seconds * 1000 });
 
     const formatted = formatDuration(duration, {
-      format: ['hours', 'minutes', 'seconds'],
+      format: ['minutes', 'seconds'],
       zero: true,
       delimiter: ':',
       locale: {
