@@ -96,7 +96,7 @@ export default function Home() {
 
   const getVideoToPlay = () => {
     const videos = ['tinkle.mp4', 'aiko.mp4', 'desolate.mp4', 'verge.mp4', 'limbo.mp4', 'laptop.mp4', 
-    'god.mp4', 'smokey.mp4', 'the-black.mp4', 'og.mp4', 'karoshi.mp4'];
+    'god.mp4', 'smokey.mp4', 'the-black.mp4', 'og.mp4', 'karoshi.mp4', 'succumb.mp4'];
     return 'karoshi.mp4';
   }
 
