@@ -126,7 +126,7 @@ export default function Home() {
           </>
         )}
 
-        <div className="-translate-y-1/3[-14px] absolute left-1/2 top-1/3 z-50 mt-4 -translate-x-1/2 rounded bg-slate-500/50 px-4 py-3.5 shadow-xl backdrop-blur">
+        <div className="-translate-y-1/3[-14px] absolute left-1/2 top-1/3 z-50 mt-4 -translate-x-1/2 rounded bg-gradient-to-b from-[#C07A89]/50 via-[#C07A89]/50 to-pink-500/50 px-4 py-3.5 shadow-xl backdrop-blur animate-gradient-y animate-gradient-x">
           <div className="grid grid-cols-4 gap-4 text-white lg:text-lg">
             <div
               className="transition-colors ease-in hover:text-[#C07A89]"
@@ -254,7 +254,7 @@ export default function Home() {
             }}
             className={clsx('h-full w-full object-cover')}
           >
-            <source src={'/video/' + getVideoToPlay()} type="video/mp4" />
+            <source src={'/video/' + "succumb.mp4"} type="video/mp4" />
           </video>
         </div>
       </div>
