@@ -25,7 +25,7 @@ Clone this repo and install all the dependencies with:
 pnpm install
 ```
 
-First, run the development server:
+Then, run the development server:
 
 ```bash
 npm run dev
