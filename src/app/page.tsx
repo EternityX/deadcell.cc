@@ -1,5 +1,11 @@
 'use client';
 
+// Edit video to play here
+const videoToPlay = 'waste.mp4';
+// Edit the artist and song title here
+const videoTitleArtist = 'KXLLSWXTCH - WASTE'
+
+// Imports
 import Head from 'next/head';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import {
@@ -8,8 +14,8 @@ import {
   faDeviantart,
   faDiscord,
   faGithub,
-  faTwitter,
   faSteam,
+  faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -94,12 +100,6 @@ export default function Home() {
     setHoveredIcon(null);
   };
 
-  const getVideoToPlay = () => {
-    const videos = ['tinkle.mp4', 'aiko.mp4', 'desolate.mp4', 'verge.mp4', 'limbo.mp4', 'laptop.mp4', 
-    'god.mp4', 'smokey.mp4', 'the-black.mp4', 'og.mp4', 'karoshi.mp4', 'succumb.mp4'];
-    return 'succumb.mp4';
-  }
-
   // @ts-ignore
   return (
     <>
@@ -126,7 +126,7 @@ export default function Home() {
           </>
         )}
 
-        <div className="-translate-y-1/3[-14px] absolute left-1/2 top-1/3 z-50 mt-4 -translate-x-1/2 rounded bg-gradient-to-b from-[#C07A89]/50 via-[#C07A89]/50 to-pink-500/50 px-4 py-3.5 shadow-xl backdrop-blur animate-gradient-y animate-gradient-x">
+        <div className="-translate-y-1/3[-14px] animate-gradient-y animate-gradient-x absolute left-1/2 top-1/3 z-50 mt-4 -translate-x-1/2 rounded bg-gradient-to-b from-[#C07A89]/50 via-[#C07A89]/50 to-pink-500/50 px-4 py-3.5 shadow-xl backdrop-blur">
           <div className="grid grid-cols-4 gap-4 text-white lg:text-lg">
             <div
               className="transition-colors ease-in hover:text-[#C07A89]"
@@ -176,7 +176,10 @@ export default function Home() {
               }
               onMouseLeave={handleIconMouseLeave}
             >
-              <a target="_blank" href="https://www.deviantart.com/mybrainisdamaged">
+              <a
+                target="_blank"
+                href="https://www.deviantart.com/mybrainisdamaged"
+              >
                 <FontAwesomeIcon icon={faDeviantart} />
               </a>
             </div>
@@ -230,11 +233,11 @@ export default function Home() {
           </span>
         </div>
 
-        {/*<div className='pointer-events-none absolute left-1/2 top-0 mt-12 -translate-x-1/2 -translate-y-1/3'>
-          <span className='font-mono text-white [text-shadow:_1px_2px_6px_rgb(0_0_0_/_100%)]'>
-            Desolute - Aiko
+        <div className="pointer-events-none absolute left-1/2 top-0 mt-12 -translate-x-1/2 -translate-y-1/3">
+          <span className="font-mono text-white [text-shadow:_1px_2px_6px_rgb(0_0_0_/_100%)]">
+            {videoTitleArtist}
           </span>
-        </div>*/}
+        </div>
 
         <div
           onClick={(e) => muted && e.preventDefault()}
@@ -254,7 +257,7 @@ export default function Home() {
             }}
             className={clsx('h-full w-full object-cover')}
           >
-            <source src={'/video/' + "succumb.mp4"} type="video/mp4" />
+            <source src={'/video/' + videoToPlay} type="video/mp4" />
           </video>
         </div>
       </div>
