@@ -10,7 +10,7 @@ import Head from 'next/head';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import {
   faArtstation,
-  faBehance,
+  faInstagram,
   faDeviantart,
   faDiscord,
   faGithub,
@@ -157,8 +157,17 @@ export default function Home() {
               <FontAwesomeIcon icon={faDiscord} />
             </div>
             <div
+              className="transition-colors ease-in hover:text-[#E03D9E]"
+              onMouseEnter={(event) => handleIconMouseEnter(event, 'Instagram')}
+              onMouseLeave={handleIconMouseLeave}
+            >
+              <a target="_blank" href="https://instagram.com/mybrainisdamaged_art/">
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
+            </div>
+            <div
               onMouseEnter={(event) =>
-                handleIconMouseEnter(event, 'jeramie@pm.me')
+                handleIconMouseEnter(event, 'mybrainisdamaged_art')
               }
               onMouseLeave={handleIconMouseLeave}
             >
@@ -195,16 +204,7 @@ export default function Home() {
               </a>
             </div>
             <div
-              className="transition-colors ease-in hover:text-[#0057FF]"
-              onMouseEnter={(event) => handleIconMouseEnter(event, 'Behance')}
-              onMouseLeave={handleIconMouseLeave}
-            >
-              <a target="_blank" href="https://www.behance.net/jeramie-davis">
-                <FontAwesomeIcon icon={faBehance} />
-              </a>
-            </div>
-            <div
-              className="transition-colors ease-in hover:text-[#C07A89]"
+              className="transition-colors ease-in hover:text-[#569DFB]"
               onMouseEnter={(event) => handleIconMouseEnter(event, 'Steam')}
               onMouseLeave={handleIconMouseLeave}
             >
