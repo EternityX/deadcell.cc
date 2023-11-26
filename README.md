@@ -1,8 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is my personal site built with Next.js and hosted on Vercel. You can preview it by visiting https://deadcell.cc/
+
+# Caveats
+
+### Browser Support
+It seems that only [Brave](https://brave.com/) will automatically play audio, however this seems like a bug and may be patched in the future.
+
+Loading the page in Brave will result in the following warning which is not seen on other browsers. You can look more into it [here](https://github.com/EternityX/deadcell.cc/blob/main/src/app/page.tsx#L50-L52).
+
+```
+page.tsx:54 Unmuting failed and the element was paused instead because the user didn't interact with the document before.
+eval @ page.tsx:54
+```
+
+The following browsers require clicking the video to enable audio.
+- Chrome
+- Firefox
+- Opera
 
 ## Getting Started
 
-First, run the development server:
+Clone this repo and install all the dependencies with:
+
+```bash
+pnpm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -16,21 +39,16 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Changing the video and artist track names
 
-To learn more about Next.js, take a look at the following resources:
+You can change the video and artist track names by opening page.tsx and modifying the two variables at the very top called `videoToPlay` and `videoTitleArtist`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Videos are stored in `public\video`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Todo
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Support mobile devices
+- Create a component for the icons
+- Click video to pause
