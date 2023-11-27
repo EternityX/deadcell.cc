@@ -46,14 +46,6 @@ export default function Home() {
 
         video.play().then(() => {
           setMuted(true);
-
-          // for some reason brave doesn't require user interaction for you
-          // to call play() and unmute the video programmatically, so what we're
-          // doing here is effectively "autoplaying" the video with sound
-          navigator.brave?.isBrave().then(() => {
-            video.muted = false;
-            setMuted(false);
-          });
         });
       });
     }
