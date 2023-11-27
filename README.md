@@ -1,22 +1,5 @@
 This is my personal site built with Next.js and hosted on Vercel. You can preview it by visiting https://deadcell.cc/
 
-# Caveats
-
-### Browser Support
-It seems that only [Brave](https://brave.com/) will automatically play audio, however this seems like a bug and may be patched in the future.
-
-Loading the page in Brave will result in the following warning which is not seen on other browsers. You can look more into it [here](https://github.com/EternityX/deadcell.cc/blob/main/src/app/page.tsx#L50-L52).
-
-```
-page.tsx:54 Unmuting failed and the element was paused instead because the user didn't interact with the document before.
-eval @ page.tsx:54
-```
-
-The following browsers require clicking the video to enable audio.
-- Chrome
-- Firefox
-- Opera
-
 ## Getting Started
 
 Clone this repo and install all the dependencies with:
