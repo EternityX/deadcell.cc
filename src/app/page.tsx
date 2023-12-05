@@ -159,7 +159,7 @@ export default function Home() {
             </div>
             <div
               onMouseEnter={(event) =>
-                handleIconMouseEnter(event, 'mybrainisdamaged_art')
+                handleIconMouseEnter(event, 'jeramie@pm.me')
               }
               onMouseLeave={handleIconMouseLeave}
             >
