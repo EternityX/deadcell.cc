@@ -1,9 +1,9 @@
 'use client';
 
 // Edit video to play here
-const videoToPlay = 'vlone.mp4';
+const videoToPlay = 'waste.mp4';
 // Edit the artist and song title here
-const videoTitleArtist = 'Joeyy - VLONE'
+const videoTitleArtist = 'KXLLSWXTCH - WASTE'
 
 // Imports
 import Head from 'next/head';
