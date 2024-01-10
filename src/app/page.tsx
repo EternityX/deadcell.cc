@@ -131,10 +131,10 @@ export default function Home() {
             </div>
             <div
               className="transition-colors ease-in hover:text-[#1DA1F2]"
-              onMouseEnter={(event) => handleIconMouseEnter(event, '@9Syl')}
+              onMouseEnter={(event) => handleIconMouseEnter(event, '@braindamaged_ai')}
               onMouseLeave={handleIconMouseLeave}
             >
-              <a target="_blank" href="https://twitter.com/9Syl">
+              <a target="_blank" href="https://twitter.com/braindamaged_ai">
                 <FontAwesomeIcon icon={faTwitter} />
               </a>
             </div>
@@ -153,7 +153,7 @@ export default function Home() {
               onMouseEnter={(event) => handleIconMouseEnter(event, 'Instagram')}
               onMouseLeave={handleIconMouseLeave}
             >
-              <a target="_blank" href="https://instagram.com/mybrainisdamaged_art/">
+              <a target="_blank" href="https://instagram.com/mybrainisdamaged_ai/">
                 <FontAwesomeIcon icon={faInstagram} />
               </a>
             </div>
@@ -179,7 +179,7 @@ export default function Home() {
             >
               <a
                 target="_blank"
-                href="https://www.deviantart.com/mybrainisdamaged"
+                href="https://deviantart.com/mybrainisdamaged"
               >
                 <FontAwesomeIcon icon={faDeviantart} />
               </a>
@@ -191,7 +191,7 @@ export default function Home() {
               }
               onMouseLeave={handleIconMouseLeave}
             >
-              <a target="_blank" href="https://www.artstation.com/jeramiedavis">
+              <a target="_blank" href="https://artstation.com/jeramiedavis">
                 <FontAwesomeIcon icon={faArtstation} />
               </a>
             </div>
