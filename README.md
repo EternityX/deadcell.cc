@@ -29,9 +29,3 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can change the video and artist track names by opening page.tsx and modifying the two variables at the very top called `videoToPlay` and `videoTitleArtist`.
 
 Videos are stored in `public\video`.
-
-## Todo
-
-- Support mobile devices
-- Create a component for the icons
-- Click video to pause
