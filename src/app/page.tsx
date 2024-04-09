@@ -15,6 +15,7 @@ import {
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import {
+  faCode,
   faEnvelope,
   faVolumeHigh,
   faVolumeXmark,
@@ -104,10 +105,10 @@ export default function Home() {
       </Head>
 
       <div className="relative flex h-screen items-center justify-center text-base">
-        <div className="-translate-y-1/3[-14px] max-w-screen gradient-mask-b-0 top-1/5 absolute z-50 m-4 h-[600px] rounded-xl border border-gray-800/50 bg-black md:left-1/2 md:top-1/3 md:m-0 md:h-[450px] md:max-w-[330px] md:-translate-x-1/2">
+        <div className="-translate-y-1/3[-14px] max-w-screen gradient-mask-b-0 top-1/5 absolute z-50 m-4 h-[600px] rounded-xl border border-gray-800/50 bg-black md:left-1/2 md:top-1/3 md:m-0 md:h-[550px] md:max-w-[330px] md:-translate-x-1/2">
           <div className="noisy pointer-events-none absolute inset-0 z-10 opacity-30" />
           <div className="relative">
-            <div className="absolute right-0 top-0 mr-1.5 mt-1.5 h-6 w-6 rounded-full  bg-[#020A12]/50 hover:bg-[#020A12]/80 transition-colors ease-in">
+            <div className="absolute right-0 top-0 mr-1.5 mt-1.5 h-6 w-6 rounded-full  bg-[#020A12]/50 transition-colors ease-in hover:bg-[#020A12]/80">
               <If
                 condition={muted}
                 fallback={
@@ -129,7 +130,7 @@ export default function Home() {
             </div>
 
             <img
-              className="select-none rounded-t-xl object-cover"
+              className="select-none rounded-t-xl object-cover "
               src="1500x500.jpg"
               alt="Banner"
             />
@@ -139,14 +140,14 @@ export default function Home() {
               style={{ width: `${(currentTime / duration) * 100}%` }}
             />
             <img
-              className="absolute left-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-gray-700 bg-gray-800"
+              className="absolute left-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-full border-b-2 border-[#C07A89] bg-gray-800"
               src="https://cdn.discordapp.com/avatars/981972199265140777/654f26d4ae3b53a2b5a672ca806c03eb?size=1024"
               alt="Profile Picture"
             />
             <div className="relative bottom-0 left-1/2 mb-6 mt-14 -translate-x-1/2 text-center tracking-[.60em] text-white">
               DEADCELL
             </div>
-            <div className="z-30 mx-24 grid grid-cols-4 gap-4 rounded-xl border border-gray-900/50 bg-gray-900/25 p-2 px-3 text-white backdrop-blur-lg">
+            <div className="z-30 mx-20 grid grid-cols-5 gap-4 rounded-xl border border-gray-900/50 bg-gray-900/25 bg-gradient-to-b from-gray-900 to-gray-900/30 p-2 px-3 text-white backdrop-blur-lg">
               <div className="transition-colors ease-in hover:text-[#C07A89]">
                 <a target="_blank" href="https://github.com/EternityX">
                   <FontAwesomeIcon icon={faGithub} />
@@ -161,6 +162,11 @@ export default function Home() {
                 </a>
               </div>
               <div className="transition-colors ease-in hover:text-[#C07A89]">
+                <a target="_blank" href="https://deadcell.software/">
+                  <FontAwesomeIcon icon={faCode} />
+                </a>
+              </div>
+              <div className="transition-colors ease-in hover:text-[#C07A89]">
                 <a target="_blank" href="https://twitter.com/_jeramiedavis">
                   <FontAwesomeIcon icon={faTwitter} />
                 </a>
@@ -171,16 +177,32 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <a
-              href="https://resivpn.com/"
-              className="absolute left-1/2 mt-3.5 w-[136px] -translate-x-1/2 rounded-xl border border-gray-900/50 bg-gray-900/25 backdrop-blur-lg transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-105 hover:border-blue-500/50 hover:bg-gradient-to-b hover:from-gray-900 hover:to-blue-700/50"
-            >
-              <img
-                className="p-4 grayscale   hover:grayscale-0"
-                src="https://resivpn.com/assets/images/logo/resi8.png"
-                alt="Profile Picture"
-              />
-            </a>
+            <div className="relative bottom-0 left-1/2 mt-6 -translate-x-1/2 text-center text-[10px] tracking-[.60em] text-white">
+              <span className="text-[#C07A89]">./</span>PROJECTS
+            </div>
+            <div className="relative left-1/2 w-32 -translate-x-1/2 border-t-[1px] border-gray-700/30"></div>
+            <div className="flex flex-row items-center justify-center gap-3.5">
+              <a
+                href="https://resivpn.com/"
+                className="  mt-3.5 w-[116px]  rounded-xl border border-gray-900/50 bg-gray-900/25 bg-gradient-to-b from-gray-900 to-gray-900/30 backdrop-blur-lg transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-105 hover:border-blue-500/50 hover:bg-gradient-to-b hover:from-gray-900 hover:to-blue-700/50"
+              >
+                <img
+                  className="p-4 grayscale   hover:grayscale-0"
+                  src="https://resivpn.com/assets/images/logo/resi8.png"
+                  alt="ResiVPN"
+                />
+              </a>
+              <a
+                href="https://getchatti.app/"
+                className="  mt-3.5 h-[59px] w-[116px] rounded-xl border border-gray-900/50 bg-gray-900/25 bg-gradient-to-b from-gray-900 to-gray-900/30 backdrop-blur-lg transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-105 hover:border-indigo-500/50 hover:bg-gradient-to-b hover:from-gray-900 hover:to-indigo-700/50"
+              >
+                <img
+                  className="mt-0.5 p-4 grayscale   hover:grayscale-0"
+                  src="https://getchatti.app/_next/image?url=%2Flogo.png&w=128&q=75"
+                  alt="Chatti"
+                />
+              </a>
+            </div>
           </div>
           <div className="absolute bottom-0 left-1/2 mb-4 -translate-x-1/2 pb-1 font-mono text-xs text-white">
             DESOLATE // REBIRTH
@@ -188,92 +210,6 @@ export default function Home() {
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 pb-1 font-mono text-xs text-white">
             2016-2024 DEADCELL
           </div>
-          {/* <div className="grid grid-cols-4 gap-4 text-white lg:text-lg">
-            <div
-              className="transition-colors ease-in hover:text-[#C07A89]"
-              onMouseEnter={(event) => handleIconMouseEnter(event, 'GitHub')}
-              onMouseLeave={handleIconMouseLeave}
-            >
-              <a target="_blank" href="https://github.com/EternityX">
-                <FontAwesomeIcon icon={faGithub} />
-              </a>
-            </div>
-            <div
-              className="transition-colors ease-in hover:text-[#1DA1F2]"
-              onMouseEnter={(event) => handleIconMouseEnter(event, '@braindamaged_ai')}
-              onMouseLeave={handleIconMouseLeave}
-            >
-              <a target="_blank" href="https://twitter.com/braindamaged_ai">
-                <FontAwesomeIcon icon={faTwitter} />
-              </a>
-            </div>
-            <div
-              className="transition-colors ease-in hover:text-[#5865F2]"
-              style={{ cursor: 'pointer' }}
-              onMouseEnter={(event) =>
-                handleIconMouseEnter(event, 'jeramiedavis')
-              }
-              onMouseLeave={handleIconMouseLeave}
-            >
-              <FontAwesomeIcon icon={faDiscord} />
-            </div>
-            <div
-              className="transition-colors ease-in hover:text-[#E03D9E]"
-              onMouseEnter={(event) => handleIconMouseEnter(event, 'Instagram')}
-              onMouseLeave={handleIconMouseLeave}
-            >
-              <a target="_blank" href="https://instagram.com/mybrainisdamaged_ai/">
-                <FontAwesomeIcon icon={faInstagram} />
-              </a>
-            </div>
-            <div
-              onMouseEnter={(event) =>
-                handleIconMouseEnter(event, 'jeramie@pm.me')
-              }
-              onMouseLeave={handleIconMouseLeave}
-            >
-              <a
-                className="transition-colors ease-in hover:text-[#C07A89]"
-                href="mailto:jeramie@pm.me"
-              >
-                <FontAwesomeIcon icon={faEnvelope} />
-              </a>
-            </div>
-            <div
-              className="transition-colors ease-in hover:text-[#00E59B]"
-              onMouseEnter={(event) =>
-                handleIconMouseEnter(event, 'DeviantArt')
-              }
-              onMouseLeave={handleIconMouseLeave}
-            >
-              <a
-                target="_blank"
-                href="https://deviantart.com/mybrainisdamaged"
-              >
-                <FontAwesomeIcon icon={faDeviantart} />
-              </a>
-            </div>
-            <div
-              className="transition-colors ease-in hover:text-[#13AFF0]"
-              onMouseEnter={(event) =>
-                handleIconMouseEnter(event, 'ArtStation')
-              }
-              onMouseLeave={handleIconMouseLeave}
-            >
-              <a target="_blank" href="https://artstation.com/jeramiedavis">
-                <FontAwesomeIcon icon={faArtstation} />
-              </a>
-            </div>
-            <div
-              className="transition-colors ease-in hover:text-[#569DFB]"
-              onMouseEnter={(event) => handleIconMouseEnter(event, 'Steam')}
-              onMouseLeave={handleIconMouseLeave}
-            >
-              <a target="_blank" href="https://steamcommunity.com/id/atoix/">
-                <FontAwesomeIcon icon={faSteam} />
-              </a>
-            </div>
-          </div> */}
         </div>
 
         {hoveredIcon && (
@@ -312,7 +248,7 @@ export default function Home() {
               // @ts-ignore
               setCurrentTime(e.target.currentTime);
             }}
-            className={clsx('h-full w-full object-cover brightness-[0.25]')}
+            className={clsx('h-full w-full object-cover brightness-[0.05]')}
           >
             <source src={'/video/' + videoToPlay} type="video/mp4" />
           </video>
