@@ -131,7 +131,7 @@ export default function Home() {
 
             <img
               className="select-none rounded-t-xl object-cover "
-              src="1500x500.jpg"
+              src="1500x500-3.jpg"
               alt="Banner"
             />
             <div className="absolute h-[1px] w-full bg-gray-800/50 shadow-xl" />
@@ -180,7 +180,7 @@ export default function Home() {
             <div className="relative bottom-0 left-1/2 mt-6 -translate-x-1/2 text-center text-[10px] tracking-[.60em] text-white">
               <span className="text-[#C07A89]">./</span>PROJECTS
             </div>
-            <div className="relative left-1/2 w-32 -translate-x-1/2 border-t-[1px] border-gray-700/30"></div>
+            <div className="relative left-1/2 w-32 -translate-x-1/2 border-t-[1px] [border-image:linear-gradient(to_right,transparent,#C07A89,transparent)_1]"></div>
             <div className="flex flex-row items-center justify-center gap-3.5">
               <a
                 href="https://resivpn.com/"
