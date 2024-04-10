@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 
-// Edit video to play here
 import Head from 'next/head';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import If from './If';
@@ -24,9 +23,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
 import { formatDuration, intervalToDuration } from 'date-fns';
 
+// Edit video to play here
 const videoToPlay = 'rebirth.mp4';
+
 // Edit the artist and song title here
-const videoTitleArtist = 'DESOLATE - REBIRTH';
+const videoTitleArtist = 'DESOLATE // REBIRTH';
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -205,7 +206,7 @@ export default function Home() {
             </div>
           </div>
           <div className="absolute bottom-0 left-1/2 mb-4 -translate-x-1/2 pb-1 font-mono text-xs text-white">
-            DESOLATE // REBIRTH
+            {videoTitleArtist}
           </div>
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 pb-1 font-mono text-xs text-white">
             2016-2024 DEADCELL
@@ -248,7 +249,7 @@ export default function Home() {
               // @ts-ignore
               setCurrentTime(e.target.currentTime);
             }}
-            className={clsx('h-full w-full object-cover brightness-[0.05]')}
+            className={clsx('h-full w-full object-cover brightness-[0.12]')}
           >
             <source src={'/video/' + videoToPlay} type="video/mp4" />
           </video>
