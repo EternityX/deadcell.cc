@@ -142,7 +142,7 @@ export default function Home() {
             />
             <img
               className="absolute left-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-full border-b-2 border-[#C07A89] bg-gray-800"
-              src="https://cdn.discordapp.com/avatars/981972199265140777/654f26d4ae3b53a2b5a672ca806c03eb?size=1024"
+              src="https://cdn.discordapp.com/avatars/981972199265140777/880f44b75f0cc83934f26c5fac9df53b.png?size=2048"
               alt="Profile Picture"
             />
             <div className="relative bottom-0 left-1/2 mb-6 mt-14 -translate-x-1/2 text-center tracking-[.60em] text-white">
